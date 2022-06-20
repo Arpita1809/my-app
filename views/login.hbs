@@ -10,12 +10,27 @@
     <form action="/login/getLogin" method="post">
     <input type="email" name="Ashu" id="" placeholder="email">
     <input type="password" name="pass" id="" placeholder="pass"><br>
-    <input type="submit">
+    <input type="submit">     
      </form>
      <table>
          <tr>
-             <td></td>
+             <td>ID</td>
+         </td>Name</td>
+         </td>Email</td>
+         </td>update</td>
+         </td>Delete</td>
          </tr>
+         {{#data}}
+           <tr>
+            <form action="/login/updatelogin" method="post">
+           </td> <input type="text" name="id" id="" value="{{id}}"><td>
+           </td> <input type="text" name="name" id="" value="{{name}}"><td>
+           </td> <button name="update">update</button>button></td>
+           </td> <button>Delete</button></form>td> 
+        
+
+            </form>
+           </tr>
      </table>
 </body>
 </html>

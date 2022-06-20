@@ -27,11 +27,12 @@
  });
  
  router.get('/getLogin', function (req, res, next) {
-   console.log(req.query)
-   con.connect()
+   console.log(_.max([1,2,3])
+   )
+   
    con.query("select * from form", function (err, result) {
      if (err) throw err;
-     console.log(result);
+     console.log(_.map(result,function(data){return data.id}));
      res.render('login', { "data": result })
    });
    
@@ -40,6 +41,12 @@
  router.post('/updateLogin', function (req, res, next) {
    console.log(req.body)
    res.json({ "Name": "Hello" })
+ });
+
+ router.post('/DeleteLogin', function (req, res, next) {
+   console.log(req.body.id)
+   res.json({ "Name": "Hello" })
+   
  });
  router.post('/getLogin', function(req, res, next){
     getloginPost(req, res, next)
